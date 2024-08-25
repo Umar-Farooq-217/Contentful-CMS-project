@@ -1,5 +1,6 @@
 import Image from "next/image";
 import client from "@/lib/contenful";
+import Navbar from "./components/navbar/Navbar";
 const fetchServices = async()=>{
   let response = await client.getEntries({content_type:'services'})
   const services = response.items.map((item)=>{
@@ -13,24 +14,26 @@ return{
 
   
 }
+const fetchMain = async ()=>{
+  let response = await client.getEntries({content_type:'mainHeading'})
+  const mainHeading = response.items.map((main)=>{
+    return{
+      description:main.fields.description,
+      url:main.fields.image.fields.file.url
+    }
+  })
+  return mainHeading
+}
 export default async function Home() {
-
-  const services = await fetchServices()
-  console.log('fetchServices',services);
+  
+  // const services = await fetchServices()
+  // const mainHeading = await fetchMain()
+  // console.log('fetchMain',mainHeading);
+  
   
   return (
-   <div className="">
-    {
-      services.map((service)=>{
-        return(
-          <div className="">
-            <h1 className="text-3xl font-bold text-center">{service.title}</h1>
-            <p className="text-3xl font-bold text-center">{service.description}</p>
-            <img className='w-20 h-20' src={service.url} alt="pic" />
-          </div>
-        )
-      })
-    }
+   <div className="lg:px-20 md:px-14 sm:px-5">
+   <Navbar/>
    </div>
   );
 }
