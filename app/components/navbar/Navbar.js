@@ -1,7 +1,7 @@
 import react from "react"
  export default function Navbar(){
 return(
-    <div classNameName="">
+    <div className="">
         
 
 <nav className="bg-white border-gray-200 dark:bg-gray-900">
