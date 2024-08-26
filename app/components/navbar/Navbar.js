@@ -41,7 +41,7 @@ return(
       }
     </div>
     <div className={`text-[16px] font-semibold lg:flex md:block  items-center justify-center sm:block sm:text-center md:bg-
-    black sm:bg-black lg:bg-white sm:mt-5 md:mt-0 lg:w-auto absolute lg:static md:w-[85%] sm:w-[93%] z-20 lg:z-auto transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-600px]'}  `}>
+    black sm:bg-black lg:bg-white sm:mt-5 md:mt-0 lg:w-auto absolute lg:static md:w-[87%] sm:w-[93%] z-20 lg:z-auto transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-600px]'}  `}>
       {
         links.map((link)=>{
           return(
@@ -52,8 +52,8 @@ return(
         })
       }
     </div>
-    <div className="flex justify-center items-center lg:bg-white md:bg-black  sm:bg-black lg:py-0 md:py-3 sm:py-5 absolute
-   lg:static lg:w-auto md:w-[85%] sm:w-[93%]  md:top-[397px] sm:top-[400px] ">
+    <div className={`flex justify-center items-center lg:bg-white md:bg-black  sm:bg-black lg:py-0 md:py-3 sm:py-5 absolute
+   lg:static lg:w-auto md:w-[87%] sm:w-[93%]  md:top-[397px] sm:top-[400px] transition-all duration-500 ease-in ${open ? 'md:top-[397px] sm:top-[400px]':'md:top-[-600px] sm:top-[-600px]'}`}>
     
       <div className="">
    
