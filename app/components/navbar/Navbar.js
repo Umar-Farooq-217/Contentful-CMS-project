@@ -1,7 +1,13 @@
+'use client'
 import react from "react"
 import styles from './Navbar.module.css'
 import Image from "next/image"
 import Link from "next/link"
+import { TiThMenu } from "react-icons/ti";
+import { useState } from "react";
+import { IoClose } from "react-icons/io5";
+
+
  export default function Navbar(){
   const links = [
     {
@@ -20,25 +26,35 @@ import Link from "next/link"
       name:'Contact', link: '/'
     },
   ]
+  const [open,setOpen]=useState(true)
+  
 return(
    <div className='lg:flex md:block justify-between '>
-    <div className="flex lg:items-center lg:justify-center md:justify-start sm:bg-green-400 ">
+    <div className="flex lg:items-center lg:justify-center md:justify-start lg:py-0 md:py-3 sm:py-3  ">
       <Image className='' src='/Union.svg' width={28} height={28} />
       <h1 className="text-[20px] font-semibold ml-2">Meta <span className="font-bold">Blog</span></h1>
 
     </div>
-    <div className="text-[16px] font-semibold md:flex  items-center justify-center sm:block sm:text-center md:bg-gray-600 sm:bg-slate-600 lg:bg-white ">
+    <div onClick={()=>setOpen(!open)} className="text-3xl font-bold absolute top-4 md:right-16 sm:right-7 cursor-pointer lg:invisible md:visible sm:visible ">
+      {open ?
+    <TiThMenu />:<IoClose />
+      }
+    </div>
+    <div className={`text-[16px] font-semibold lg:flex md:block  items-center justify-center sm:block sm:text-center md:bg-
+    black sm:bg-black lg:bg-white sm:mt-5 md:mt-0 lg:w-auto absolute lg:static md:w-[85%] sm:w-[93%] z-20 lg:z-auto transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-600px]'}  `}>
       {
         links.map((link)=>{
           return(
-            <li key={link.name} className="list-none px-3 sm:py-5">
+            <li key={link.name} className="list-none px-3 sm:py-5 lg:text-black md:text-white sm:text-white ">
               <Link href={link.link}>{link.name}</Link>
             </li>
           )
         })
       }
     </div>
-    <div className="flex justify-center items-center lg:bg-white md:bg-slate-700 sm:bg-gray-600 md:py-0 sm:py-5">
+    <div className="flex justify-center items-center lg:bg-white md:bg-black  sm:bg-black lg:py-0 md:py-3 sm:py-5 absolute
+   lg:static lg:w-auto md:w-[85%] sm:w-[93%]  md:top-[397px] sm:top-[400px] ">
+    
       <div className="">
    
 <div className={styles.InputContainer}>
