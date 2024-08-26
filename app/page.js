@@ -34,8 +34,8 @@ export default async function Home() {
   return (
    <div className="lg:px-20 md:px-14 sm:px-5">
    <Navbar/>
-   <div className="bg-[url('/Image.png')] bg-cover bg-no-repeat bg-center min-h-[600px] mt-10 relative ">
-   <div className="bg-white rounded-2xl shadow-2xl w-[min(600px,90%)] py-6 px-9 ml-20  absolute bottom-[-50px]">
+   {/* <div className="bg-[url('/Image.png')] bg-cover bg-no-repeat bg-center min-h-[600px] mt-10 relative ">
+   <div className="bg-white rounded-2xl shadow-2xl w-[min(600px,90%)] py-6 px-9   absolute bottom-[-50px] left-[10%]">
     <button className='bg-blue-500 text-white py-1 px-2 font-bold text-sm rounded-lg mt-3'>Technology</button>
     <h1 className="text-[36px] font-bold py-5">The Impact of Technology on the Workplace: How Technology is Changing</h1>
     <div className="flex  items-center">
@@ -45,7 +45,7 @@ export default async function Home() {
     </div>
 
    </div>
-   </div>
+   </div> */}
    </div>
   );
 }

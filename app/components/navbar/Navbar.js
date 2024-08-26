@@ -29,19 +29,23 @@ import { IoClose } from "react-icons/io5";
   const [open,setOpen]=useState(true)
   
 return(
-   <div className='lg:flex md:block justify-between '>
+   <div className='lg:flex md:block justify-between  '>
     <div className="flex lg:items-center lg:justify-center md:justify-start lg:py-0 md:py-3 sm:py-3  ">
       <Image className='' src='/Union.svg' width={28} height={28} />
       <h1 className="text-[20px] font-semibold ml-2">Meta <span className="font-bold">Blog</span></h1>
 
     </div>
-    <div onClick={()=>setOpen(!open)} className="text-3xl font-bold absolute top-4 md:right-16 sm:right-7 cursor-pointer lg:invisible md:visible sm:visible ">
+    <div onClick={()=>setOpen(!open)} className="text-3xl font-bold absolute top-4 md:right-16 sm:right-7 
+    cursor-pointer lg:invisible md:visible sm:visible ">
       {open ?
-    <TiThMenu />:<IoClose />
+    <IoClose />
+    :
+    <TiThMenu />
       }
     </div>
     <div className={`text-[16px] font-semibold lg:flex md:block  items-center justify-center sm:block sm:text-center md:bg-
-    black sm:bg-black lg:bg-white sm:mt-5 md:mt-0 lg:w-auto absolute lg:static md:w-[87%] sm:w-[93%] z-20 lg:z-auto transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-600px]'}  `}>
+    black sm:bg-black lg:bg-white sm:mt-5 md:mt-0 lg:w-auto absolute lg:static md:w-[87%] sm:w-[93%] z-20 lg:z-auto
+     transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-600px]'}  `}>
       {
         links.map((link)=>{
           return(
@@ -53,7 +57,8 @@ return(
       }
     </div>
     <div className={`flex justify-center items-center lg:bg-white md:bg-black  sm:bg-black lg:py-0 md:py-3 sm:py-5 absolute
-   lg:static lg:w-auto md:w-[87%] sm:w-[93%]  md:top-[397px] sm:top-[400px] transition-all duration-500 ease-in ${open ? 'md:top-[397px] sm:top-[400px]':'md:top-[-600px] sm:top-[-600px]'}`}>
+   lg:static lg:w-auto md:w-[87%] sm:w-[93%] z-20 lg:z-auto md:top-[397px] sm:top-[400px] transition-all duration-500 ease-in
+    ${open ? 'top-[400px]':'top-[-600px]'}`}>
     
       <div className="">
    
