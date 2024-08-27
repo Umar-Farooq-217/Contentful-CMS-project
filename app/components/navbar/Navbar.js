@@ -26,7 +26,7 @@ import { IoClose } from "react-icons/io5";
       name:'Contact', link: '/'
     },
   ]
-  const [open,setOpen]=useState(true)
+  const [open,setOpen]=useState(false)
   
 return(
    <div className='lg:flex md:block justify-between  '>
@@ -44,7 +44,7 @@ return(
       }
     </div>
     <div className={`text-[16px] font-semibold lg:flex md:block  items-center justify-center sm:block sm:text-center md:bg-
-    black sm:bg-black lg:bg-white sm:mt-5 md:mt-0 lg:w-auto absolute lg:static md:w-[87%] sm:w-[93%] z-20 lg:z-auto
+    black sm:bg-black lg:bg-white  md:mt-0 lg:w-auto absolute left-0 lg:static md:w-full sm:w-full z-20 lg:z-auto
      transition-all duration-500 ease-in ${open ? 'top-20' : 'top-[-600px]'}  `}>
       {
         links.map((link)=>{
@@ -56,9 +56,9 @@ return(
         })
       }
     </div>
-    <div className={`flex justify-center items-center lg:bg-white md:bg-black  sm:bg-black lg:py-0 md:py-3 sm:py-5 absolute
-   lg:static lg:w-auto md:w-[87%] sm:w-[93%] z-20 lg:z-auto md:top-[397px] sm:top-[400px] transition-all duration-500 ease-in
-    ${open ? 'top-[400px]':'top-[-600px]'}`}>
+    <div className={`flex justify-center items-center lg:bg-white md:bg-black  sm:bg-black lg:py-0 md:py-3 sm:py-5 absolute left-0
+   lg:static lg:w-auto md:w-full sm:w-full z-20 lg:z-auto transition-all duration-500 ease-in
+    ${open ? ' md:top-[397px] sm:top-[400px]':'md:top-[-600px] sm:top-[-600px]'}`}>
     
       <div className="">
    
@@ -82,11 +82,10 @@ return(
 
       </div>
     <div className="ml-5">
-    <label className={styles['ui-switch']}>
-  <input type="checkbox"/>
-  <div className={styles.slider}>
-    <div className={styles.circle}></div>
-  </div>
+ 
+<label class={styles.switch}>
+    <input type="checkbox"/>
+    <span class={styles.slider}></span>
 </label>
     </div>
 
