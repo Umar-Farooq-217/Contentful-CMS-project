@@ -31,7 +31,7 @@ import { IoClose } from "react-icons/io5";
 return(
    <div className='lg:flex md:block justify-between  '>
     <div className="flex lg:items-center lg:justify-center md:justify-start lg:py-0 md:py-3 sm:py-3  ">
-      <Image className='' src='/Union.svg' width={28} height={28} />
+      <Image className='' src='/Union.svg' width={28} height={28} alt='pic' />
       <h1 className="text-[20px] font-semibold ml-2">Meta <span className="font-bold">Blog</span></h1>
 
     </div>
@@ -71,7 +71,7 @@ return(
     type="text"
   />
 
-  <label className={styles.labelforsearch} for="input">
+  <label className={styles.labelforsearch} htmlFor="input">
     <svg className={styles.searchIcon} viewBox="0 0 512 512">
       <path
         d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
@@ -83,9 +83,9 @@ return(
       </div>
     <div className="ml-5">
  
-<label class={styles.switch}>
+<label className={styles.switch}>
     <input type="checkbox"/>
-    <span class={styles.slider}></span>
+    <span className={styles.slider}></span>
 </label>
     </div>
 
