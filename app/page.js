@@ -1,6 +1,9 @@
 import Image from "next/image";
 import client from "@/lib/contenful";
 import Navbar from "./components/navbar/Navbar";
+import Link from "next/link";
+import { FcBusinessman } from "react-icons/fc";
+
 const fetchServices = async () => {
   try {
     let response = await client.getEntries({ content_type: 'services' });
@@ -12,10 +15,10 @@ const fetchServices = async () => {
           : item.fields.image.fields.file.url)
         : null;
 
-      const imgUrl = item.fields.img?.fields?.file?.url
+        const imgUrl = item.fields.img?.fields?.file?.url
         ? (item.fields.img.fields.file.url.startsWith('//')
           ? `https:${item.fields.img.fields.file.url}`
-          : item.fields.image.fields.file.url)
+          : item.fields.img.fields.file.url)
         : null;
 
       return {
@@ -23,7 +26,8 @@ const fetchServices = async () => {
         pera: item.fields.pera,
         description: item.fields.description,
         image: imageUrl,
-        img: imgUrl,
+        img: imgUrl
+        // img: item.fields.img?.fields?.file?.url,
       };
     });
 
@@ -85,19 +89,25 @@ export default async function Home() {
         return(
           <div key={i} className="p-4 border-[1px] border-gray-300 rounded-xl">
             <Image className='w-full rounded-lg' src={service.image} width={250} height={250} alt='pic' />
-            <p className="">{service.title}</p>
-            <p className="">{service.description}</p>
-            <div className="">
-            <Image className='w-full rounded-lg' src={service.img} width={25} height={25} alt='pic' />
-           
-            <p>{service.pera}</p>
+            <button className="text-[14px] text-blue-500 font-bold bg-[#fcf5f5] border-[1px] border-gray-100 shadow-md my-5">
+              <Link className='py-3 px-3' href='/'>{service.title}</Link>
+
+            </button>
+       
+            <p className="text-[24px] font-bold">{service.description}</p>
+            <div className="flex pt-5 items-center">
+            {/* <Image className=' rounded-lg' src={service.img} width={25} height={25} alt='pic' /> */}
+            {/* i am not know why second image in not fetching from contentful and i face error after every attempt */}
+            <FcBusinessman className='text-2xl' />
+            <p className='font-bold ml-3 text-xl'>{service.pera}</p>
 
             </div>
 
           </div>
         )
-      })
-    }</div>
+      })}
+    
+    </div>
    </div>
    </div>
   );
