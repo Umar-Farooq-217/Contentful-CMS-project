@@ -29,7 +29,7 @@ import { IoClose } from "react-icons/io5";
   const [open,setOpen]=useState(false)
   
 return(
-   <div className='lg:flex md:block justify-between  '>
+   <div className='lg:flex md:block justify-between  lg:px-20 md:px-14 sm:px-5'>
     <div className="flex lg:items-center lg:justify-center md:justify-start lg:py-0 md:py-3 sm:py-3  ">
       <Image className='' src='/Union.svg' width={28} height={28} alt='pic' />
       <h1 className="text-[20px] font-semibold ml-2">Meta <span className="font-bold">Blog</span></h1>
