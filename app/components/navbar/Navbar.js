@@ -6,6 +6,7 @@ import Link from "next/link"
 import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
+import { useEffect } from "react"
 
 
  export default function Navbar(){
@@ -27,6 +28,8 @@ import { IoClose } from "react-icons/io5";
     },
   ]
   const [open,setOpen]=useState(false)
+  const [darkMode ,setDarkMode]=(false)
+  useEffect
   
 return(
    <div className='lg:flex md:block justify-between  lg:px-20 md:px-14 sm:px-5'>
@@ -84,7 +87,7 @@ return(
     <div className="ml-5">
  
 <label className={styles.switch}>
-    <input type="checkbox"/>
+    <input type="checkbox" className='bgToggle'/>
     <span className={styles.slider}></span>
 </label>
     </div>
