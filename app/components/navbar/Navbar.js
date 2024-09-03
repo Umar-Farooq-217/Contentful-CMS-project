@@ -15,7 +15,7 @@ import { useEffect } from "react"
       name:'Home', link: '/'
     },
     {
-      name:'Blog', link: '/'
+      name:'Blog', link: '/blog'
     },
     {
       name:'Single Post', link: '/'
@@ -28,8 +28,8 @@ import { useEffect } from "react"
     },
   ]
   const [open,setOpen]=useState(false)
-  const [darkMode ,setDarkMode]=(false)
-  useEffect
+  // const [darkMode ,setDarkMode]=(false)
+  
   
 return(
    <div className='lg:flex md:block justify-between  lg:px-20 md:px-14 sm:px-5'>

@@ -63,7 +63,7 @@ export default async function Home() {
   return (
    <div className="">
    <Navbar/>
-   <div className="bg-[url('/Image.png')] bg-cover bg-no-repeat bg-center min-h-[600px]  mt-10 relative lg:px-20 md:px-14 sm:px-5">
+   <div className="bg-[url('/Image.png')] bg-cover bg-no-repeat bg-center min-h-[600px] rounded-xl mt-10 relative lg:px-20 md:px-14 sm:px-5">
    <div className="bg-white rounded-2xl shadow-2xl w-[min(600px,95%)] py-6 px-9  
     absolute md:bottom-[-50px] md:left-[8%] sm:bottom-[-10%] left-2 firstAnimate">
     <button className='bg-blue-500 text-white py-1 px-2 font-bold text-sm rounded-lg mt-3'>Technology</button>
