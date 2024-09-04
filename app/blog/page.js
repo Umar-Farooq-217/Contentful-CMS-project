@@ -2,9 +2,31 @@ import React from 'react'
 import Navbar from '../components/navbar/Navbar'
 import Link from 'next/link'
 import { IoMdContact } from "react-icons/io";
+import client from '@/lib/contenful';
+const fetchServices = async()=>{
+  try {
+    let response = await client.getEntries({content_type: 'services'})
+    const services = response.items.map((item)=>{
+      return {
+        title:item.fields.title,
+        pera:item.fields.pera,
+        description:item.fields.description,
+        date:item.fields.date,
+        image:item.fields.image.fields.file.url
+      }
+    })
+    return services
 
+  } catch (error) {
+    console.log('error',error);
+    
+  }
+}
 
-export default function page() {
+export default async function page() {
+ let services =await fetchServices()
+ console.log('services',services);
+ 
   return (
     <div>
         <Navbar/>
