@@ -11,10 +11,10 @@ export default function page() {
         <h1 className="font-bold text-3xl text-center mt-8">Page Title</h1>
         <h1 className='text-center my-5'><Link href='/' className='text-lg px-2'>Home</Link><Link className='text-gray-600 text-lg px-2' href='/'>Link One</Link> </h1>
 
-      <div className="bg-[url('/Image.png')] bg-cover bg-no-repeat bg-center rounded-xl min-h-[600px] relative p-12">
+      <div className="bg-[url('/Image.png')] bg-cover bg-no-repeat bg-center rounded-xl min-h-[600px] relative sm:p-5 md:p-12">
       <div className="absolute bottom-10">
       <button className='text-lg text-white py-1 px-3 bg-blue-500 font-bold rounded-md'>Technology</button>
-      <h1 className="text-4xl text-white  w-[60%] font-bold pt-7">
+      <h1 className="text-4xl text-white  md:w-[60%] sm:w-[95%] font-bold pt-7">
       The Impact of Technology on the Workplace: How Technology is Changing
       </h1>
       <div className="flex items-center pt-7">
