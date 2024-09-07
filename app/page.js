@@ -41,16 +41,16 @@ const fetchServices = async () => {
   }
 };
 
-const fetchMain = async ()=>{
-  let response = await client.getEntries({content_type:'mainHeading'})
-  const mainHeading = response.items.map((main)=>{
-    return{
-      description:main.fields.description,
-      url:main.fields.image.fields.file.url
-    }
-  })
-  return mainHeading
-}
+// const fetchMain = async ()=>{
+//   let response = await client.getEntries({content_type:'mainHeading'})
+//   const mainHeading = response.items.map((main)=>{
+//     return{
+//       description:main.fields.description,
+//       url:main.fields.image.fields.file.url
+//     }
+//   })
+//   return mainHeading
+// }
 export default async function Home() {
   
   const services = await fetchServices()
