@@ -51,8 +51,8 @@ export default function Footer() {
     <div className="flex">
       <Image src='/footerLogo.svg' width={50} height={50} alt="pic" />
       <div className="">
-        <h1 className="text-lg ">Meta <span className="font-bold">Blog</span></h1>
-        <p className="text-[16px] ">© JS Template 2023. All Rights Reserved.</p>
+        <h1 className="text-lg ml-3 ">Meta <span className="font-bold">Blog</span></h1>
+        <p className="text-[16px] ml-3 ">© JS Template 2023. All Rights Reserved.</p>
       </div>
     </div>
     <div className="flex items-center">

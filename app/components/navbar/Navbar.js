@@ -18,7 +18,7 @@ import { useEffect } from "react"
       name:'Blog', link: '/blog'
     },
     {
-      name:'Single Post', link: '/'
+      name:'Single Post', link: '/singlePost'
     },
     {
       name:'Pages', link: '/'
