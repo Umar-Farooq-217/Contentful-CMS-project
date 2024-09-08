@@ -1,6 +1,10 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar'
 import { IoMdContact } from "react-icons/io";
+const fetchData = async()=>{
+  console.log('error');
+  
+}
 
 
 export default function page() {
