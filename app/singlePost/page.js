@@ -6,7 +6,13 @@ import client from '@/lib/contenful';
 const fetchData = async()=>{
 try {
   let  response = await client.getEntries({content_type:"singlePost"})
-console.log('response',response);
+const services = response.items.map((item)=>{
+  return{
+    firstPera:item.fields.singleFirst,
+    secondPera: item.fields.singleSecond
+  }
+})
+return services
 } catch (error) {
   console.log('error',error);
   
@@ -18,6 +24,8 @@ console.log('response',response);
 
 export default async function page() {
   const singlePost = await fetchData()
+  console.log('singlePost',singlePost);
+  
   return (
     <div>
         <Navbar/>
@@ -32,7 +40,17 @@ export default async function page() {
             <p className="text-md text-black font-semibold pl-2 ">Tracey Wilson</p>
             <p className="text-md text-black pl-3 ">5 August , 2002</p>
           </div>
-          <Image className='w-full min-h-[400px] rounded-xl object-cover' src='/firstImg.png' width={200} height={200} alt='pic' />
+          <Image className='w-full min-h-[400px] rounded-xl object-cover mt-8' src='/firstImg.svg' width={200} height={200} alt='pic' />
+          {
+            singlePost.map((item,i)=>{
+              return(
+                <div key={i}>
+                  <p className="font-serif text-xl mt-5">{item.firstPera}</p>
+                  <p className="font-serif text-xl mt-7">{item.secondPera}</p>
+                </div>
+              )
+            })
+          }
       </div>
     </div>
   )
