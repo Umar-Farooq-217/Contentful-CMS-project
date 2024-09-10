@@ -1,18 +1,28 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar'
+import Image from 'next/image';
 import { IoMdContact } from "react-icons/io";
+import client from '@/lib/contenful';
 const fetchData = async()=>{
-  console.log('error');
+try {
+  let  response = await client.getEntries({content_type:"singlePost"})
+console.log('response',response);
+} catch (error) {
+  console.log('error',error);
+  
+}
+
   
 }
 
 
-export default function page() {
+export default async function page() {
+  const singlePost = await fetchData()
   return (
     <div>
         <Navbar/>
-      <div className=" lg:mx-[200px] md:mx-[130px] sm:mx-7 mt-7">
-      <button className='text-lg text-white mt-5 py-1 px-3 bg-blue-500 font-bold rounded-md'>Technology</button>
+      <div className=" max-w-[800px] m-auto mt-7">
+      <button className='text-md text-white mt-5 py-1 px-3 bg-blue-500 font-bold rounded-md'>Technology</button>
           <h1 className="text-[36px]     font-semibold pt-7">
             The Impact of Technology on the Workplace: <br /> How Technology is Changing
           </h1>
@@ -21,9 +31,8 @@ export default function page() {
             <IoMdContact className='text-black text-3xl' />
             <p className="text-md text-black font-semibold pl-2 ">Tracey Wilson</p>
             <p className="text-md text-black pl-3 ">5 August , 2002</p>
-
-
           </div>
+          <Image className='w-full min-h-[400px] rounded-xl object-cover' src='/firstImg.png' width={200} height={200} alt='pic' />
       </div>
     </div>
   )
