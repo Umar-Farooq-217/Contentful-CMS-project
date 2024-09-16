@@ -89,6 +89,21 @@ export default async function page() {
               )
             })
           }
+          {
+            thirdData.map((item,i)=>{
+              return(
+                <div key={i}>
+                  <h1 className="font-serif font-bold text-2xl mt-9">{item.heading}</h1>
+                  <p className="font-serif text-xl mt-5">{item.firstPera}</p>
+                  <p className="font-serif text-xl mt-7">{item.secondPera}</p>
+                  <p className="font-serif text-xl mt-12 font-semibold py-8 px-4 rounded-xl  bg-gray-200">{item.thirdPera}</p>
+                  
+                </div>
+              )
+            })
+          }
+                    <Image className='w-full min-h-[400px] rounded-xl object-cover mt-8' src='/secondImage.svg' width={200} height={200} alt='pic' />
+
       </div>
     </div>
   )
