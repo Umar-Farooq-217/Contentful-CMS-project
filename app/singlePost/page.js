@@ -32,12 +32,26 @@ const fetchSecondData = async()=>{
   })
   return secondData
 }
+const fetchThirdData = async()=>{
+  let response = await client.getEntries({content_type:'singlePostThird'})
+  const services = response.items.map((item)=>{
+    return{
+      heading:item.fields.title,
+      firstPera:item.fields.pera,
+      secondPera:item.fields.firstPera,
+      thirdPera:item.fields.secondPera
+    }
+  })
+  return services
+  
+}
 
 
 export default async function page() {
   const singlePost = await fetchData()
   const secondData = await fetchSecondData()
-  console.log('singlePost',secondData);
+  const thirdData = await fetchThirdData()
+  console.log('singlePost',thirdData);
   
   return (
     <div>
