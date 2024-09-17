@@ -3,6 +3,7 @@ import Navbar from '../components/navbar/Navbar'
 import Image from 'next/image';
 import { IoMdContact } from "react-icons/io";
 import client from '@/lib/contenful';
+import Footer from '../footer/Footer';
 const fetchData = async()=>{
 try {
   let  response = await client.getEntries({content_type:"singlePost"})
@@ -96,7 +97,7 @@ export default async function page() {
                   <h1 className="font-serif font-bold text-2xl mt-9">{item.heading}</h1>
                   <p className="font-serif text-xl mt-5">{item.firstPera}</p>
                   <p className="font-serif text-xl mt-7">{item.secondPera}</p>
-                  <p className="font-serif text-xl mt-12 font-semibold py-8 px-4 rounded-xl  bg-gray-200">{item.thirdPera}</p>
+                  <p className="font-serif text-xl mt-12 font-semibold py-8 px-4 rounded-xl shadow-lg italic  bg-[#F6F6F7]">{item.thirdPera}</p>
                   
                 </div>
               )
@@ -105,6 +106,7 @@ export default async function page() {
                     <Image className='w-full min-h-[400px] rounded-xl object-cover mt-8' src='/secondImage.svg' width={200} height={200} alt='pic' />
 
       </div>
+      <Footer/>
     </div>
   )
 }
