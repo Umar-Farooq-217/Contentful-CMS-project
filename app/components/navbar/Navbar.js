@@ -21,10 +21,10 @@ import { useEffect } from "react"
       name:'Single Post', link: '/singlePost'
     },
     {
-      name:'Pages', link: '/'
+      name:'Pages', link: '/pages'
     },
     {
-      name:'Contact', link: '/'
+      name:'Contact', link: '/contact'
     },
   ]
   const [open,setOpen]=useState(false)
@@ -52,8 +52,8 @@ return(
       {
         links.map((link)=>{
           return(
-            <li key={link.name} className="list-none px-3 sm:py-5 lg:text-black md:text-white sm:text-white ">
-              <Link href={link.link}>{link.name}</Link>
+            <li key={link.name} className="list-none px-3 sm:py-5 lg:text-black md:text-white sm:text-white  ">
+              <Link className="hover:bg-black hover:text-white hover:px-4 hover:py-2 rounded-3xl hover:scale-105" href={link.link}>{link.name}</Link>
             </li>
           )
         })
