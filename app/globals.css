@@ -12,6 +12,20 @@
     border-color: #4A90E2; Blue border on focus
 } */
 
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+    box-shadow:  0 0 10px rgba(6, 6, 6, 0,25);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 15px;
+    background-color: blue;
+}
 @keyframes animate {
     from{
         opacity: 0;
